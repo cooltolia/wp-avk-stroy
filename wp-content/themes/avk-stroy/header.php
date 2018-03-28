@@ -12,7 +12,7 @@
 
 <body class="pageload no-js"><!-- main-header --> 
     <header class="main-header">
-		<div class="main-header__top-row"><a class="main-header__logo"><?php the_custom_logo(); ?></a>
+		<div class="main-header__top-row"><?php the_custom_logo(); ?></a>
 		</div>
 		<div class="main-header__navigation">
 			<div class="main-header__inner-row"><!-- main-nav --> 
@@ -20,7 +20,7 @@
 
 				<?php
 				wp_nav_menu([
-					'theme_location' => 'top-menu',
+					'theme_location' => 'main-menu',
 					"menu"           => 'Top menu',
 					'menu_class'     => 'main-nav__list',
 					"container"      => false,
@@ -29,20 +29,8 @@
 
 				
 				?>
-				<!-- <ul class="main-nav__list">
-					<li class="main-nav__item"><a href="about.html" class="main-nav__link">О нас</a>
-					</li>
-					<li class="main-nav__item"><a href="objects.html" class="main-nav__link">Объекты</a>
-					</li>
-					<li class="main-nav__item"><a href="licenses.html" class="main-nav__link">Лицензии</a>
-					</li>
-					<li class="main-nav__item"><a href="testimonials.html" class="main-nav__link">Отзывы</a>
-					</li>
-					<li class="main-nav__item"><a href="contacts.html" class="main-nav__link">Контакты</a>
-					</li>
-				</ul> -->
 			</nav><!--/ main-nav --> 
-			<div class="main-header__tel"><span>тел.:</span> +7(812) 240-20-68
+			<div class="main-header__tel"><span>тел.:</span> <?php echo get_option( 'company_phone' ) ?>
 			</div>
 			</div>
 		</div>

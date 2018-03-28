@@ -2,18 +2,16 @@
 		<div class="main-footer__inner">
 			<div class="main-footer__nav"><!-- footer-nav --> 
 				<nav class="footer-nav">
-					<ul class="footer-nav__list">
-						<li class="footer-nav__item"><a href="about.html" class="footer-nav__link">О нас</a>
-						</li>
-						<li class="footer-nav__item"><a href="objects.html" class="footer-nav__link">Объекты</a>
-						</li>
-						<li class="footer-nav__item"><a href="licenses.html" class="footer-nav__link">Лицензии</a>
-						</li>
-						<li class="footer-nav__item"><a href="testimonials.html" class="footer-nav__link">Отзывы</a>
-						</li>
-						<li class="footer-nav__item"><a href="contacts.html" class="footer-nav__link">Контакты</a>
-						</li>
-					</ul>
+					<?php
+					wp_nav_menu([
+						'theme_location' => 'main-menu',
+						"menu"           => 'bottom menu',
+						'menu_class'     => 'footer-nav__list',
+						"container"      => false,
+						'depth'          => 0,
+					]);
+					?>
+				
 				</nav><!--/ footer-nav --> 
 			</div>
 			<div class="main-footer__row">
@@ -35,10 +33,9 @@
 				</div>
 				<div class="main-footer__block">
 					<div class="main-footer__credits">
-					2018 © ООО “AВК-Строй”<br>
-					ИНН: 7811523780, ОГРН: 1127847312163 193091,<br> 
-					город Санкт-петербург, Октябрьская набережная,<br> 
-					дом 6, литер В, помещение 11-Н
+					<? echo get_option('company_copyright') ?><br>
+					ИНН: <? echo get_option('company_inn') ?>, ОГРН: <? echo get_option('company_ogrn') ?>,<br> 
+					<? echo get_option('company_address') ?>
 					</div>
 				</div>
 			</div>
